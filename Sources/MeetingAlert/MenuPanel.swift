@@ -211,7 +211,7 @@ private struct NextMeetingCard: View {
                     Button {
                         onJoin(url)
                     } label: {
-                        Label("Join \(meeting.serviceName ?? "")", systemImage: "video.fill")
+                        Label(meeting.joinButton.title, systemImage: meeting.joinButton.symbol)
                             .font(.callout.weight(.semibold))
                     }
                     .buttonStyle(.borderedProminent)

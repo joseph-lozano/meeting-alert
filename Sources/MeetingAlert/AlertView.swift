@@ -84,7 +84,7 @@ private struct MeetingCard: View {
         let button = Button {
             onJoin(url)
         } label: {
-            Label("Join \(meeting.serviceName ?? "Meeting")", systemImage: "video.fill")
+            Label(meeting.joinButton.title, systemImage: meeting.joinButton.symbol)
                 .font(.title2.weight(.semibold))
                 .padding(.horizontal, 24)
                 .padding(.vertical, 8)

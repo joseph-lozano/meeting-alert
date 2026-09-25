@@ -109,6 +109,12 @@ extension Meeting {
         return "\(start.formatted(date: .omitted, time: .shortened)) – \(end.formatted(date: .omitted, time: .shortened))"
     }
 
+    /// Title and SF Symbol for the join button.
+    var joinButton: (title: String, symbol: String) {
+        if serviceName == "GitHub" { return ("Star on GitHub", "star.fill") }
+        return ("Join \(serviceName ?? "Meeting")", "video.fill")
+    }
+
     var serviceName: String? {
         guard let host = joinURL?.host else { return nil }
         if host.hasSuffix("zoom.us") { return "Zoom" }
